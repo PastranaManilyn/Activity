@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>WELCOME TO JQUERY FUNCTION</h1>
+    <h2 id="samplejs"></h2>
+    <h2 class="showAnother" style="display: none;">Example Jquery Function</h2>
+
+    <h2 id="name"></h2> 
+    <button type="button" id="clickMe" >Click Me</button>
+    <h2 id="showClick" style="display: none;">Manilyn</h2>
+
+
+    <button type="button" class="showAlert">SHOW ALERT</button>
+    <h2 id="displayName"></h2>
+
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <script>
+       // document.getElementById("samplejs").inerHTML= "EXAMPLE JAVASCRIPT";
+
+        $(document).ready(function(){
+
+            $("#samplejs").text("EXAMPLE JQUERY");
+            $("#samplejs").css("color","blue").fadeOut(5000);
+            $(".showAnother").fadeIn(5000).show();
+            $(".showAnother").css("color","red");
+
+
+            var name = showName("MANILYN PASTRANA- BSIS STUDENT");
+           //var nameAlert = 
+           $("#name").text(name).addClass("Manilyn");
+            alert(name);
+
+            //CLICK THE BUTTON
+            $("#clickMe").click(function(){
+                $("#showClick").show();
+
+            });
+
+            //WILL SHOW THE ALERT USING THE BUTTON CLICK
+            $(".showAlert").click(function(){
+               const name= AlertInputName();
+               $("#displayName").text(name);
+                
+            });
+
+
+        });
+
+        //JAVASCRIPT
+        function showName(name){
+            return name;
+        }
+
+        function AlertInputName(){
+          var  name = prompt("Enter Your Name:");
+            return name;
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>
